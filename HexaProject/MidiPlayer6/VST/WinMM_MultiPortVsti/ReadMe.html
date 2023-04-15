@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>WinMM Multi Port VSTi Readme</title>
+<style type="text/css">
+body {
+	background-color: #222222;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+margin:10px;
+}
+
+li {
+  line-height: 150%;
+}
+
+#mainframe {
+	background-color: #BBBBBB;	
+	position: relative;
+	max-width: 1152px;
+	padding: 12px;
+	padding-top: 8px;
+	border: none; 
+	margin: auto;
+	min-height: 100vh;
+	
+}
+
+</style>
+</head>
+<body>
+<div id="mainframe">
+<h2>WinMM Multi Port VSTi </h2>
+    <p>is a fake/hybrid portable VST 2.4 instrument / MIDI port router for Windows that  is developed specially for <a href="http://falcosoft.hu/softwares.html#midiplayer" target="_blank">Soundfont Midi Player</a> 6.1+. </p>
+    <p><strong>Notice:</strong> WinMM Multi Port VSTi is not a real VSTi. Namely it does not send back rendered sample data to VST host. Instead it simply sends Midi data to selected standard Windows Midi out ports that render the Midi data on their own way. Selected ports can be any internal or external Midi synthesizers. </p>
+    <p> The plugin uses the seldom documented 2 byte long 0xF5 xx Midi message to route<span jsslot=""><span data-dobid="hdw"> subsequent</span></span> Midi messages to different ports (xx can be from 1 to 4). </p>
+  <p>With the help of the plugin you can play back multi port Midi files. Up to 4 ports are supported wich means 64 separate Midi channels. <br>
+    You can also use the plugin to play back the same Midi channels on multiple Midi ports at once.  E.g. you can play channels 1-16 on 2 different ports at once while play channels 17-32 and channels 33-48 on 2 additional different ports.<br>
+    A special feature intended to increase polyphony in case of voice constrained synths is the Even/Odd channel segmentation. If you select 'Even Only' and 'Odd Only' channel options you can assign channels 2,4,6,8,10,12,14,16 and 1,3,5,7,9,11,13,15 respectively to 2 different synths. This can be useful e.g. in case of two SC-55 devices. </p>
+    <p>To compensate different latencies of different synths you can set delay on any ports that use the Stream API (from 1 to 999 ms). <br>
+      To compensate different volume levels you can set the volume of any ports.<br>
+      <br>
+      Two different WinMM APIs can be selected for any ports:<br>
+      The Real Time API uses the conventional midiOutShortMsg and midiOutLongMsg functions and works everywhere. Moreover the Real Time API has less overhead.<br>
+      The Stream API uses midiStreamOut and with it you can schedule events to the future so it can be used for latency compensation (delay). It has more overhead and does not work on Win9x, but it has more precise Midi timing. </p>
+    <p>Tips:<br>
+    1. You can remove a synth from a Midi port slot by right clicking on the port's combobox.<br>
+      2. If using Stream API and different delays for different ports the synths may start to lose sync after some time. In this case you can press the Reset/Resync All Synths button without losing instruments and controller values. This kind of reset only kills notes and restarts the streams.</p>
+    <p>&nbsp;</p>
+    <p><strong>Tested Hosts:</strong></p>
+    <ul>
+      <li><a href="http://falcosoft.hu/softwares.html#midiplayer" target="_blank">Soundfont Midi Player</a></li>
+      <li><a href="http://www.hermannseib.com/english/savihost.htm" target="_blank">SAVIHost</a></li>
+      <li><a href="http://www.hermannseib.com/english/vsthost.htm" target="_blank">VSTHost</a></li>
+    </ul>
+    <p>&nbsp;</p>
+    <p><strong>version 1.0 </strong></p>
+    <p>Initial release.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>If you would like to support the development of WinMM Multi Port VSTi you can donate through PayPal.</p>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="get" target="_blank">
+      <p>
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="SY5KG9XCVDVW6" >
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" >
+      </p>
+    </form>
+    <p>&nbsp;</p>
+    <p><a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a><br>
+    WinMM Multi Port VSTi by <a target="_blank" xmlns:cc="http://creativecommons.org/ns#" href="http://falcosoft.hu/softwares.html" property="cc:attributionName" rel="cc:attributionURL">Zolt&aacute;n Bacsk&oacute; (Falcosoft)</a> is licensed under a </p>
+    <p><a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. </p>
+    <p>&nbsp;</p>    
+    <p>Have fun.</p>
+    <p>Zolt&aacute;n Bacsk&oacute; (Falco)</p>
+    <p><a href="http://falcosoft.hu" target="_blank">http://falcosoft.hu/</a></p>
+    <p>zbacsko@falcosoft.hu</p>
+</div>
+</body>
+</html>
